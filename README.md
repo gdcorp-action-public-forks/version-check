@@ -1,13 +1,16 @@
 # Version check
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 You can use this GitHub action to check whether your npm package version has been updated: this can be extremely helpful if you want to automate your release process.
 
 The main difference between this action and many others out there is that this doesn't do a specific task (it doesn't publish to registries, create tags or releases, send notifications, ...) but instead gives you an output that you can use in other steps of your workflow as you prefer: this way you don't have to deal with stuff you don't care about ;)
 
-This action is heavily inspired by [`npm-publish-action`](https://github.com/pascalgn/npm-publish-action) by [pascal](https://github.com/pascalgn): if you only care about publishing your package to npm automatically, this is the simplest solution :thumbsup:  
+This action is heavily inspired by [`npm-publish-action`](https://github.com/pascalgn/npm-publish-action) by [pascal](https://github.com/pascalgn): if you only care about publishing your package to npm automatically, this is the simplest solution :thumbsup:
 
 ## Usage
 
@@ -20,8 +23,7 @@ You have to set up a step like this in your workflow (this assumes you've alread
   uses: EndBug/version-check@v1 # You can choose the version/branch you prefer.
 
   with: # All these parameters are optional, check their descriptions to see if you need them.
-
-    # Whether to search in every commit's diff. 
+    # Whether to search in every commit's diff.
     # This is useful if you often do change the version without saying it in the commit message. If you always include the semver of the new version in your commit message when you bump versions then you can omit this.
     # Default: false
     diff-search: true
@@ -51,6 +53,10 @@ You have to set up a step like this in your workflow (this assumes you've alread
     # Please note that using the wrong value may make the action detect the change but fail to identify the type.
     # Default: ''
     static-checking: localIsNew
+
+    # If you are using an instance of GitHub Enterprise you can use this option to change the location of your GitHub api url.
+    # Default: 'https://api.github.com'
+    github-api-url: https://git.contoso.com/api/v3
 ```
 
 Now, when someone changes the version in `package.json` to `1.2.3` and pushes a commit with the message `<WHATEVER> 1.2.3` (eg. `Release 1.2.3` or `Bump version to v1.2.3`), output values are set (see Outputs below).
@@ -64,8 +70,8 @@ Please note that even if the action is built to be easier as possible to use, it
 - `version`: if the version has changed, it shows the version number (e.g. "1.0.2")
 - `commit`: if the version has changed, it shows the sha of the commit where the change has been found.
 
-To access these outputs, you need to access the context of the step you previously set up: you can find more info about steps contexts [here](https://help.github.com/en/articles/contexts-and-expression-syntax-for-github-actions#steps-context).  
-If you set your step id to `check` you'll find the outputs at `steps.check.outputs.OUTPUT_NAME`: you can use these outputs as conditions for other steps.  
+To access these outputs, you need to access the context of the step you previously set up: you can find more info about steps contexts [here](https://help.github.com/en/articles/contexts-and-expression-syntax-for-github-actions#steps-context).
+If you set your step id to `check` you'll find the outputs at `steps.check.outputs.OUTPUT_NAME`: you can use these outputs as conditions for other steps.
 Here's an example:
 
 ```yaml
@@ -88,12 +94,13 @@ Please keep in mind that when the `static-checking` option is used the `commit` 
 
 ### Publishing automatically to both NPM & GitHub Package Registry
 
-If you want to see how to publish automatically your package to both NPM & GPR, please see [this](doc/auto-publish-example.yml) example workflow ;)  
+If you want to see how to publish automatically your package to both NPM & GPR, please see [this](doc/auto-publish-example.yml) example workflow ;)
 You can also find a more in-depth guide in this [here](doc/auto-publish-walkthrough.md).
 
 ### Static-checking with your latest version on NPM
 
 If you want to check whether the version has changed since your last published version on NPM, you can do it using `file-url` and `static-checking`:
+
 - `file-url`: you need to use something like a raw.githubusercontent.com or unpkg.com URL, an API that will give you a JSON response with your package file.
 - `static-checking`: you're expecting your last published version to be older than the one in your repo, so we'll use `localIsNew`
 
@@ -106,10 +113,6 @@ If you want to check whether the version has changed since your last published v
 ```
 
 This step will have a `true` `changed` output every time our version is newer (there won't be any `commit` output).
-
-## Contributing
-
-If you want to contribute to the action, even by just raising a problem or proposing an idea, you can click [here](CONTRIBUTING.md) to find out how to do it ;)
 
 ## Contributors ✨
 
@@ -132,6 +135,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://alextorres.me"><img src="https://avatars0.githubusercontent.com/u/2911626?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alex Torres</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=AlexRex" title="Code">💻</a></td>
     <td align="center"><a href="https://www.adamkudrna.cz"><img src="https://avatars2.githubusercontent.com/u/5614085?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Adam Kudrna</b></sub></a><br /><a href="#ideas-adamkudrna" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/EndBug/version-check/commits?author=adamkudrna" title="Documentation">📖</a></td>
     <td align="center"><a href="https://ludik.xyz/music"><img src="https://avatars0.githubusercontent.com/u/12783208?v=4?s=100" width="100px;" alt=""/><br /><sub><b>spinlud</b></sub></a><br /><a href="https://github.com/EndBug/version-check/issues?q=author%3Aspinlud" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/JasonCubic"><img src="https://avatars.githubusercontent.com/u/8921015?v=4?s=100" width="100px;" alt=""/><br /><sub><b>JasonCubic</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=JasonCubic" title="Code">💻</a></td>
   </tr>
 </table>
 

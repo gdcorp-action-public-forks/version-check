@@ -1,6 +1,6 @@
 {
   "name": "version-check",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "An action that allows you to check whether your npm package version has been updated",
   "main": "lib/main.js",
   "scripts": {
@@ -30,7 +30,7 @@
   "homepage": "https://github.com/EndBug/version-check#readme",
   "dependencies": {
     "@actions/core": "^1.6.0",
-    "axios": "^0.24.0",
+    "got": "^11.8.3",
     "semver-diff": "^3.1.1",
     "semver-regex": "^3.1.2"
   },
@@ -38,13 +38,13 @@
     "@types/node": "^12.20.6",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
-    "@vercel/ncc": "^0.32.0",
+    "@vercel/ncc": "^0.33.0",
     "all-contributors-cli": "^6.20.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.4",
-    "prettier": "^2.5.0",
-    "typescript": "^4.5.2"
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.3"
   }
 }
