@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/EndBug/version-check#readme",
   "dependencies": {
-    "@actions/core": "^1.8.2",
+    "@actions/core": "^1.9.0",
     "got": "^11.8.3",
     "semver-diff": "^3.1.1",
     "semver-regex": "^3.1.2"
@@ -42,9 +42,9 @@
     "all-contributors-cli": "^6.20.0",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.1",
-    "prettier": "^2.6.2",
-    "typescript": "^4.7.3"
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
   }
 }
