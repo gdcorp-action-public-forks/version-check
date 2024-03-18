@@ -1,7 +1,7 @@
 # Version check
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 You can use this GitHub action to check whether your npm package version has been updated: this can be extremely helpful if you want to automate your release process.
@@ -23,7 +23,7 @@ You have to set up a step like this in your workflow (this assumes you've alread
   with:
     # All these parameters are optional,
     # check their descriptions to see if you need them.
-  
+
     # Whether to search in every commit's diff.
     # This is useful if you often do change the version without saying it in the
     # commit message. If you always include the semver of the new version in your
@@ -40,7 +40,7 @@ You have to set up a step like this in your workflow (this assumes you've alread
     # You can put your bearer GitHub token here. This is needed only when running
     # the action on private repostiories, if you're running it on a public repo you
     # can omit this.
-    # If you need to set this, you can use the built-in `GITHUB_TOKEN` secret that 
+    # If you need to set this, you can use the built-in `GITHUB_TOKEN` secret that
     # GitHub generates for your repo's actions: you can find more info about it here:
     # https://help.github.com/en/github/automating-your-workflow-with-github-actions/virtual-environments-for-github-actions#github_token-secret
     # Default: ''
@@ -86,7 +86,7 @@ Please note that even if the action is built to be easier as possible to use, it
 ### Outputs
 
 - `changed`: either "true" or "false", indicates whether the version has changed.
-- `type`: if the version has changed, it tries to find the type of bump (e.g. "patch", "minor", ...)
+- `type`: if the version has changed, it tries to find the type of bump (e.g. "patch", "minor", ...). To see the full list of available types, please refer to the [`semver-diff` docs](https://github.com/sindresorhus/semver-diff/blob/1f2ac09e19213122094b9c49c7ac9bf4089da93b/readme.md)
 - `version`: if the version has changed, it shows the version number (e.g. "1.0.2")
 - `commit`: if the version has changed, it shows the sha of the commit where the change has been found.
 
@@ -144,22 +144,28 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tbody>
     <tr>
-      <td align="center"><a href="https://github.com/EndBug"><img src="https://avatars1.githubusercontent.com/u/26386270?v=4?s=100" width="100px;" alt="Federico Grandi"/><br /><sub><b>Federico Grandi</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=EndBug" title="Code">💻</a> <a href="https://github.com/EndBug/version-check/commits?author=EndBug" title="Documentation">📖</a></td>
-      <td align="center"><a href="https://blog.zwezdin.com/"><img src="https://avatars2.githubusercontent.com/u/800755?v=4?s=100" width="100px;" alt="Sergey Zwezdin"/><br /><sub><b>Sergey Zwezdin</b></sub></a><br /><a href="#ideas-sergeyzwezdin" title="Ideas, Planning, & Feedback">🤔</a></td>
-      <td align="center"><a href="https://github.com/larskinn"><img src="https://avatars1.githubusercontent.com/u/910569?v=4?s=100" width="100px;" alt="Lars Kinn Ekroll"/><br /><sub><b>Lars Kinn Ekroll</b></sub></a><br /><a href="https://github.com/EndBug/version-check/issues?q=author%3Alarskinn" title="Bug reports">🐛</a></td>
-      <td align="center"><a href="http://www.hsalazar.xyz"><img src="https://avatars1.githubusercontent.com/u/4967271?v=4?s=100" width="100px;" alt="Humberto"/><br /><sub><b>Humberto</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=hsalazr" title="Code">💻</a></td>
-      <td align="center"><a href="https://github.com/hmehta"><img src="https://avatars3.githubusercontent.com/u/108334?v=4?s=100" width="100px;" alt="Heikki Mehtänen"/><br /><sub><b>Heikki Mehtänen</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=hmehta" title="Code">💻</a></td>
-      <td align="center"><a href="https://github.com/CJY0208"><img src="https://avatars1.githubusercontent.com/u/18415774?v=4?s=100" width="100px;" alt="CJY"/><br /><sub><b>CJY</b></sub></a><br /><a href="#ideas-CJY0208" title="Ideas, Planning, & Feedback">🤔</a></td>
-      <td align="center"><a href="https://github.com/wasabigeek"><img src="https://avatars2.githubusercontent.com/u/4256705?v=4?s=100" width="100px;" alt="Nicholas"/><br /><sub><b>Nicholas</b></sub></a><br /><a href="#ideas-wasabigeek" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/EndBug"><img src="https://avatars1.githubusercontent.com/u/26386270?v=4?s=100" width="100px;" alt="Federico Grandi"/><br /><sub><b>Federico Grandi</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=EndBug" title="Code">💻</a> <a href="https://github.com/EndBug/version-check/commits?author=EndBug" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://blog.zwezdin.com/"><img src="https://avatars2.githubusercontent.com/u/800755?v=4?s=100" width="100px;" alt="Sergey Zwezdin"/><br /><sub><b>Sergey Zwezdin</b></sub></a><br /><a href="#ideas-sergeyzwezdin" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/larskinn"><img src="https://avatars1.githubusercontent.com/u/910569?v=4?s=100" width="100px;" alt="Lars Kinn Ekroll"/><br /><sub><b>Lars Kinn Ekroll</b></sub></a><br /><a href="https://github.com/EndBug/version-check/issues?q=author%3Alarskinn" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.hsalazar.xyz"><img src="https://avatars1.githubusercontent.com/u/4967271?v=4?s=100" width="100px;" alt="Humberto"/><br /><sub><b>Humberto</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=hsalazr" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/hmehta"><img src="https://avatars3.githubusercontent.com/u/108334?v=4?s=100" width="100px;" alt="Heikki Mehtänen"/><br /><sub><b>Heikki Mehtänen</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=hmehta" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/CJY0208"><img src="https://avatars1.githubusercontent.com/u/18415774?v=4?s=100" width="100px;" alt="CJY"/><br /><sub><b>CJY</b></sub></a><br /><a href="#ideas-CJY0208" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/wasabigeek"><img src="https://avatars2.githubusercontent.com/u/4256705?v=4?s=100" width="100px;" alt="Nicholas"/><br /><sub><b>Nicholas</b></sub></a><br /><a href="#ideas-wasabigeek" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
     <tr>
-      <td align="center"><a href="http://alextorres.me"><img src="https://avatars0.githubusercontent.com/u/2911626?v=4?s=100" width="100px;" alt="Alex Torres"/><br /><sub><b>Alex Torres</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=AlexRex" title="Code">💻</a></td>
-      <td align="center"><a href="https://www.adamkudrna.cz"><img src="https://avatars2.githubusercontent.com/u/5614085?v=4?s=100" width="100px;" alt="Adam Kudrna"/><br /><sub><b>Adam Kudrna</b></sub></a><br /><a href="#ideas-adamkudrna" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/EndBug/version-check/commits?author=adamkudrna" title="Documentation">📖</a></td>
-      <td align="center"><a href="https://ludik.xyz/music"><img src="https://avatars0.githubusercontent.com/u/12783208?v=4?s=100" width="100px;" alt="spinlud"/><br /><sub><b>spinlud</b></sub></a><br /><a href="https://github.com/EndBug/version-check/issues?q=author%3Aspinlud" title="Bug reports">🐛</a></td>
-      <td align="center"><a href="https://github.com/JasonCubic"><img src="https://avatars.githubusercontent.com/u/8921015?v=4?s=100" width="100px;" alt="JasonCubic"/><br /><sub><b>JasonCubic</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=JasonCubic" title="Code">💻</a></td>
-      <td align="center"><a href="https://gerritbirkeland.com"><img src="https://avatars.githubusercontent.com/u/19329837?v=4?s=100" width="100px;" alt="Gerrit Birkeland"/><br /><sub><b>Gerrit Birkeland</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=Gerrit0" title="Code">💻</a></td>
-      <td align="center"><a href="https://github.com/Hirse"><img src="https://avatars.githubusercontent.com/u/2564094?v=4?s=100" width="100px;" alt="Jan Pilzer"/><br /><sub><b>Jan Pilzer</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=Hirse" title="Documentation">📖</a></td>
-      <td align="center"><a href="http://jacknumber.fr"><img src="https://avatars.githubusercontent.com/u/2306550?v=4?s=100" width="100px;" alt="Antoine Cadoret"/><br /><sub><b>Antoine Cadoret</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=JackNUMBER" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://alextorres.me"><img src="https://avatars0.githubusercontent.com/u/2911626?v=4?s=100" width="100px;" alt="Alex Torres"/><br /><sub><b>Alex Torres</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=AlexRex" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.adamkudrna.cz"><img src="https://avatars2.githubusercontent.com/u/5614085?v=4?s=100" width="100px;" alt="Adam Kudrna"/><br /><sub><b>Adam Kudrna</b></sub></a><br /><a href="#ideas-adamkudrna" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/EndBug/version-check/commits?author=adamkudrna" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://ludik.xyz/music"><img src="https://avatars0.githubusercontent.com/u/12783208?v=4?s=100" width="100px;" alt="spinlud"/><br /><sub><b>spinlud</b></sub></a><br /><a href="https://github.com/EndBug/version-check/issues?q=author%3Aspinlud" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/JasonCubic"><img src="https://avatars.githubusercontent.com/u/8921015?v=4?s=100" width="100px;" alt="JasonCubic"/><br /><sub><b>JasonCubic</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=JasonCubic" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://gerritbirkeland.com"><img src="https://avatars.githubusercontent.com/u/19329837?v=4?s=100" width="100px;" alt="Gerrit Birkeland"/><br /><sub><b>Gerrit Birkeland</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=Gerrit0" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Hirse"><img src="https://avatars.githubusercontent.com/u/2564094?v=4?s=100" width="100px;" alt="Jan Pilzer"/><br /><sub><b>Jan Pilzer</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=Hirse" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://jacknumber.fr"><img src="https://avatars.githubusercontent.com/u/2306550?v=4?s=100" width="100px;" alt="Antoine Cadoret"/><br /><sub><b>Antoine Cadoret</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=JackNUMBER" title="Documentation">📖</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/kusyka911"><img src="https://avatars.githubusercontent.com/u/24293461?v=4?s=100" width="100px;" alt="Vladislav"/><br /><sub><b>Vladislav</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=kusyka911" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://zachcardoza.com"><img src="https://avatars.githubusercontent.com/u/2280384?v=4?s=100" width="100px;" alt="Zach Cardoza"/><br /><sub><b>Zach Cardoza</b></sub></a><br /><a href="https://github.com/EndBug/version-check/issues?q=author%3Abayssmekanique" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/HarelM"><img src="https://avatars.githubusercontent.com/u/3269297?v=4?s=100" width="100px;" alt="Harel M"/><br /><sub><b>Harel M</b></sub></a><br /><a href="https://github.com/EndBug/version-check/commits?author=HarelM" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://www.linkedin.com/in/leandro-melo-8b17021ba/"><img src="https://avatars.githubusercontent.com/u/72796924?v=4?s=100" width="100px;" alt="Leandro Melo"/><br /><sub><b>Leandro Melo</b></sub></a><br /><a href="#maintenance-Tpleme" title="Maintenance">🚧</a></td>
     </tr>
   </tbody>
 </table>

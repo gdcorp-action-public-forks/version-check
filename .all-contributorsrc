@@ -137,8 +137,45 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "kusyka911",
+      "name": "Vladislav",
+      "avatar_url": "https://avatars.githubusercontent.com/u/24293461?v=4",
+      "profile": "https://github.com/kusyka911",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "bayssmekanique",
+      "name": "Zach Cardoza",
+      "avatar_url": "https://avatars.githubusercontent.com/u/2280384?v=4",
+      "profile": "https://zachcardoza.com",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "HarelM",
+      "name": "Harel M",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3269297?v=4",
+      "profile": "https://github.com/HarelM",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Tpleme",
+      "name": "Leandro Melo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/72796924?v=4",
+      "profile": "https://www.linkedin.com/in/leandro-melo-8b17021ba/",
+      "contributions": [
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
-  "skipCi": true
+  "skipCi": true,
+  "commitType": "docs"
 }
